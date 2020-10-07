@@ -10,13 +10,19 @@ public class MoodAnalyzer {
     }
 
     public String analyzeMood(){
+        if(message == null){
+            try{
+                throw new RuntimeException();
+            }catch (RuntimeException e){
+                return "HAPPY";
+            }
+        }
         if(message.contains("Sad"))
             return "SAD";
         return "HAPPY";
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the Mood Analyzer Program");
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
         moodAnalyzer.analyzeMood();
     }
