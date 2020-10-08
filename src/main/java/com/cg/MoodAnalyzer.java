@@ -2,6 +2,7 @@ package com.cg;
 
 public class MoodAnalyzer {
     private String message;
+    public enum Mood {NULL, EMPTY};
 
     public MoodAnalyzer(){
     }
@@ -10,16 +11,17 @@ public class MoodAnalyzer {
     }
 
     public String analyzeMood(){
-        if(message == null){
-            try{
-                throw new RuntimeException();
-            }catch (RuntimeException e){
-                return "HAPPY";
+        try{
+            if(message.contains("Sad"))
+                return "SAD";
+            else if(message == null || message.isEmpty()) {
+                throw new NullPointerException();
             }
+        }catch(NullPointerException e) {
+            throw new MoodAnalysisException("Invalid Mood.");
+        }finally {
+            return "HAPPY";
         }
-        if(message.contains("Sad"))
-            return "SAD";
-        return "HAPPY";
     }
 
     public static void main(String[] args) {

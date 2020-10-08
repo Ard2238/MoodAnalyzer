@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.MoodTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-07T19:18:58" hostname="DESKTOP-A3NGCO2" time="0.001">
+<testsuite name="com.cg.MoodTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-08T08:49:59" hostname="DESKTOP-A3NGCO2" time="35.559">
   <properties/>
-  <testcase name="givenMessage_whenNull_returnHAPPY" classname="com.cg.MoodTest" time="0.001"/>
+  <testcase name="givenMessage_whenEmpty_shouldThrowExc" classname="com.cg.MoodTest" time="35.559">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

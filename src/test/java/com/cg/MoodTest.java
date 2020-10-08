@@ -18,4 +18,24 @@ public class MoodTest {
         moodAnalyzer = new MoodAnalyzer("I am in Happy Mood");
         Assert.assertEquals("HAPPY", moodAnalyzer.analyzeMood());
     }
+
+    @Test
+    public void givenMessage_whenNULL_shouldThrowExc(){
+        moodAnalyzer = new MoodAnalyzer(null);
+        try{
+            moodAnalyzer.analyzeMood();
+        }catch (MoodAnalysisException e){
+            Assert.assertEquals( "Invalid Mood.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void givenMessage_whenEmpty_shouldThrowExc(){
+        moodAnalyzer = new MoodAnalyzer(" ");
+        try{
+            moodAnalyzer.analyzeMood();
+        }catch (MoodAnalysisException e){
+            Assert.assertEquals("Invalid Mood.", e.getMessage());
+        }
+    }
 }
